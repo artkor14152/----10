@@ -1,9 +1,10 @@
 import streamlit as st
 import matplotlib.pyplot as plt
 choise = st.selectbox("укажите пол:", ["1 класс", "2 класс", "3 класс"])
-data = {"мужчин:":0,"женщин:":0}
-with open("data [1nzNjv].csv") as file:
-    for line in file:
+info = {"мужчин:":0,"женщин:":0}
+def getinfo (lines, choise):
+    data = {"мужчин:":0,"женщин:":0}
+    for line in lines:
         d = line.split (',')
         gender = d[5]
         pclass = d[2]
@@ -22,7 +23,10 @@ with open("data [1nzNjv].csv") as file:
                 data["мужчин:"] += 1
             else:
                 data["женщин:"] += 1
-st.dataframe(data)
+    return data
+with open("data [1nzNjv].csv") as file:
+    info = getinfo (file.readlines (),choise)
+st.dataframe(info)
 fig = plt.figure(figsize=(10,5))
-plt.bar(['мужчин','женщин'],[data["мужчин:"],data["женщин:"]])
+plt.bar(['мужчин','женщин'],[info["мужчин:"],info["женщин:"]])
 st.pyplot(fig)
