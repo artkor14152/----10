@@ -1,4 +1,4 @@
-from main import getinfo
+from var8 import getinfo
 def test_male (): 
     testline = '1,0,3,"Braund, Mr. Owen Harris",male,22,1,0,A/5 21171,7.25,,S'
     actual = getinfo ([testline],'3 класс')
