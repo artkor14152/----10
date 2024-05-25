@@ -24,6 +24,7 @@ def getinfo (lines, choise):
                 data["женщин:"] += 1
     return data
 def var8 ():
+    st.title('Найти количество пассажиров каждого пола по указанному классу обслуживания')
     choise = st.selectbox("укажите пол:", ["1 класс", "2 класс", "3 класс"])
     info = {"мужчин:":0,"женщин:":0}
     with open("data.csv") as file:

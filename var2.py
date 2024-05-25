@@ -24,6 +24,7 @@ def getinfo(lines, opt):
                 notSurvived+=1
     return survived, notSurvived
 def var2():
+    st.title ('Подсчитать число спасенных и погибших для указанного пункта посадки.')
     option=st.selectbox("Выбирете пункт посадки ", ["Шербур", "Квинстоун", "Саутгемптон"])
     with open("data.csv") as f:
         next(f)

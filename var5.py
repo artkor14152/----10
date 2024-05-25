@@ -41,6 +41,7 @@ def getinfo(lines, option):
         femaleRate = survived_females/females*100
         return maleRate, femaleRate
 def var5():
+    st.title ('Вычислить долю выживших среди мужчин и женщин, выбрав количество братьев, сестер... ')
     with open("data.csv") as f:
         option=st.selectbox("Выбирете количество братьев или сестер", ["0", "1-2", "Больше 2"])
         next(f)
