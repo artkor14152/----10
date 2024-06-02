@@ -57,4 +57,3 @@ def var2():
             plt.title("Количество спасённых и погибших в Саутгемптоне")
             plt.bar(["Спасённых", "Погибших"], [survived, notSurvived])
             st.pyplot(fig)
-   
