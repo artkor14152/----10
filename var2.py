@@ -41,7 +41,7 @@ def var2():
             plt.title("Количество спасённых и погибших в Шербуре")
             plt.bar(["Спасённых", "Погибших"], [survived, notSurvived])
             st.pyplot(fig)
-        elif option=="Квинстоун":
+        elif option == "Квинстоун":
             st.table({"Спасённых": survived, "Погибших": notSurvived})
             fig = plt.figure(figsize=(10, 5))
             plt.xlabel("Значение поля Survived")
@@ -49,12 +49,12 @@ def var2():
             plt.title("Количество спасённых и погибших в Квинстоуне")
             plt.bar(["Спасённых", "Погибших"], [survived, notSurvived])
             st.pyplot(fig)
-        elif option=="Саутгемптон":
-            table = st.table({"Спасённых": survived, "Погибших": notSurvived})
+        elif option == "Саутгемптон":
+            st.table({"Спасённых": survived, "Погибших": notSurvived})
             fig = plt.figure(figsize=(10, 5))
             plt.xlabel("Значение поля Survived")
             plt.ylabel("Количество")
             plt.title("Количество спасённых и погибших в Саутгемптоне")
             plt.bar(["Спасённых", "Погибших"], [survived, notSurvived])
             st.pyplot(fig)
-            
+   
