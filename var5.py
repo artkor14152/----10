@@ -18,7 +18,7 @@ def getinfo(lines, option):
                 if survived == "1":
                     survived_males += 1
             else:
-                females+=1
+                females += 1
                 if survived == "1":
                     survived_females += 1
         elif SibSp == "1" or SibSp == "2" and option == "1-2":
@@ -45,12 +45,18 @@ def getinfo(lines, option):
 
 
 def var5():
-    st.title('Вычислить долю выживших среди мужчин и женщин, выбрав количество братьев, сестер... ')
+    st.title(
+        "Вычислить долю выживших среди мужчин и женщин, выбрав количество братьев, сестер... "
+    )
     with open("data.csv") as f:
-        option = st.selectbox("Выбирете количество братьев или сестер", ["0", "1-2", "Больше 2"])
+        option = st.selectbox(
+            "Выбирете количество братьев или сестер", ["0", "1-2", "Больше 2"]
+        )
         next(f)
         maleRate, femaleRate = getinfo(f.readlines(), option)
-        st.table({"Пол": ["Мужчины", "Женщины"], "Процент выживших": [maleRate, femaleRate]})
+        st.table(
+            {"Пол": ["Мужчины", "Женщины"], "Процент выживших": [maleRate, femaleRate]}
+        )
         fig = plt.figure(figsize=(10, 5))
         plt.xlabel("Пол")
         plt.ylabel("Процент")
